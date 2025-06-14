@@ -1,9 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36203.30 d17.14
+VisualStudioVersion = 17.14.36203.30
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelService.ClientApi", "HotelService.ClientApi\HotelService.ClientApi.csproj", "{1C2AF9DE-0BF9-4F27-A59A-D3C8E8184BE4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reservation", "Reservation", "{DCFDC169-ECD4-4043-84F6-EE85569CCCD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelService.Reservation.CrossCutting", "HotelService.Reservation.CrossCutting\HotelService.Reservation.CrossCutting.csproj", "{59B024EB-DFB1-483A-8494-866463812F3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelService.Reservation.Storage", "HotelService.Reservation.Storage\HotelService.Reservation.Storage.csproj", "{8383F554-737F-4DCC-AECB-7137A683328A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelService.ReservationApi", "HotelService.ReservationApi\HotelService.ReservationApi.csproj", "{4F3B3F3E-19C6-4673-A267-C6005D74876D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +25,26 @@ Global
 		{1C2AF9DE-0BF9-4F27-A59A-D3C8E8184BE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C2AF9DE-0BF9-4F27-A59A-D3C8E8184BE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C2AF9DE-0BF9-4F27-A59A-D3C8E8184BE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59B024EB-DFB1-483A-8494-866463812F3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59B024EB-DFB1-483A-8494-866463812F3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59B024EB-DFB1-483A-8494-866463812F3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59B024EB-DFB1-483A-8494-866463812F3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8383F554-737F-4DCC-AECB-7137A683328A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8383F554-737F-4DCC-AECB-7137A683328A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8383F554-737F-4DCC-AECB-7137A683328A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8383F554-737F-4DCC-AECB-7137A683328A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F3B3F3E-19C6-4673-A267-C6005D74876D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F3B3F3E-19C6-4673-A267-C6005D74876D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F3B3F3E-19C6-4673-A267-C6005D74876D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F3B3F3E-19C6-4673-A267-C6005D74876D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1C2AF9DE-0BF9-4F27-A59A-D3C8E8184BE4} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{59B024EB-DFB1-483A-8494-866463812F3A} = {DCFDC169-ECD4-4043-84F6-EE85569CCCD7}
+		{8383F554-737F-4DCC-AECB-7137A683328A} = {DCFDC169-ECD4-4043-84F6-EE85569CCCD7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EFCC34A5-8A8C-4F9B-8FBD-1347C36B87D1}
