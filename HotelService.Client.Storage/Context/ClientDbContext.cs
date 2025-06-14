@@ -1,5 +1,6 @@
 ﻿using HotelService.ClientApi.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace HotelService.ClientApi
 {
@@ -7,7 +8,8 @@ namespace HotelService.ClientApi
     {
         private readonly IConfiguration _configuration;
 
-        public DbSet<Client> Clients { get; set; }
+        public DbSet<Entities.Client> Clients { get; set; }
+       
 
 
         public ClientDbContext(IConfiguration configuration)

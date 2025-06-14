@@ -12,14 +12,14 @@ namespace HotelService.ClientApi.Services
             _context = context;
         }
 
-        public async Task<Client> GetById(int id)
+        public async Task<Entities.Client> GetById(int id)
         {
             return await _context.Clients
                 .AsNoTracking()
                 .FirstOrDefaultAsync(c => c.Id == id);
         }
 
-        public async Task<IEnumerable<Client>> Get()
+        public async Task<IEnumerable<Entities.Client>> Get()
         {
             return await _context.Clients
                 .AsNoTracking()
@@ -27,12 +27,12 @@ namespace HotelService.ClientApi.Services
         }
 
 
-        public async Task Add(Client entity)
+        public async Task Add(Entities.Client entity)
         {
             _context.Clients.Add(entity);
             await _context.SaveChangesAsync();
         }
-        public async Task Update(Client client)
+        public async Task Update(Entities.Client client)
         {
             _context.Clients.Update(client);
             await _context.SaveChangesAsync();

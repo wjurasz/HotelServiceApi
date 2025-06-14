@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace HotelService.ClientApi.Migrations
+namespace HotelService.Client.Storage.Migrations
 {
     [DbContext(typeof(ClientDbContext))]
-    [Migration("20250614133926_phonenumberfix")]
-    partial class phonenumberfix
+    [Migration("20250614153949_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

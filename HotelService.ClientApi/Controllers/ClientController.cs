@@ -21,7 +21,7 @@ namespace HotelService.ClientApi.Controllers
         /// </summary>
         /// <returns>Lista obiektów typu Client.</returns>
         [HttpGet]
-        public async Task<IEnumerable<Client>> GetAll()
+        public async Task<IEnumerable<Entities.Client>> GetAll()
         {
             return await _clientService.Get();
         }
@@ -50,7 +50,7 @@ namespace HotelService.ClientApi.Controllers
         /// <param name="dto">Dane klienta do utworzenia.</param>
         /// <returns>Kod 200 po sukcesie lub 400 jeśli dane są nieprawidłowe.</returns>
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] Client dto)
+        public async Task<IActionResult> Create([FromBody] Entities.Client dto)
         {
             if (!ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace HotelService.ClientApi.Controllers
         /// <param name="updatedClient">Zaktualizowany obiekt klienta.</param>
         /// <returns>Kod 200 po sukcesie lub 404 jeśli nie znaleziono.</returns>
         [HttpPut("{id}")]
-        public async Task<IActionResult> Edit(int id, [FromBody] Client updatedClient)
+        public async Task<IActionResult> Edit(int id, [FromBody] Entities.Client updatedClient)
         {
             var existingClient = await _clientService.GetById(id);
 
@@ -112,7 +112,7 @@ namespace HotelService.ClientApi.Controllers
         /// <param name="patchDoc">Dokument zawierający operacje do wykonania.</param>
         /// <returns>Kod 200 z obiektem po aktualizacji lub 404 jeśli nie znaleziono.</returns>
         [HttpPatch("{id}")]
-        public async Task<IActionResult> Patch(int id, [FromBody] JsonPatchDocument<Client> patchDoc)
+        public async Task<IActionResult> Patch(int id, [FromBody] JsonPatchDocument<Entities.Client> patchDoc)
         {
             if (patchDoc == null)
             {

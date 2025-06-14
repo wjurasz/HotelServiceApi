@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace HotelService.ClientApi.Migrations
+namespace HotelService.Client.Storage.Migrations
 {
     /// <inheritdoc />
     public partial class init : Migration
@@ -23,7 +23,7 @@ namespace HotelService.ClientApi.Migrations
                     FirstName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
-                    PhoneNumber = table.Column<int>(type: "int", maxLength: 11, nullable: false)
+                    PhoneNumber = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false)
                 },
                 constraints: table =>
                 {

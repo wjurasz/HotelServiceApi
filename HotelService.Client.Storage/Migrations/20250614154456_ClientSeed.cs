@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace HotelService.ClientApi.Migrations
+namespace HotelService.Client.Storage.Migrations
 {
     /// <inheritdoc />
     public partial class ClientSeed : Migration
@@ -20,9 +20,9 @@ namespace HotelService.ClientApi.Migrations
                     { "Jan", "Nowak", "jan.nowak@example.com", "987654321" },
                     { "Ewa", "Zając", "ewa.zajac@example.com", "456123789" },
                     { "Piotr", "Wiśniewski", "piotr.w@example.com", "654321987" },
-                    { "Dawid", "Wójcik", "dawid.wojcik@example.com", "321654987" },
-                    { "Ryszard", "Wójcik", "r.wojcik@example.com", "147258369" },
-                    { "Donata", "Wójcik", "d.wojcik@example.com", "963852741" },
+                    { "Dawid", "Wójcik", "d.wojcik@example.com", "321654987" },
+                    { "Ryszard", "Wójcik", "r.Wójcik@example.com", "147258369" },
+                    { "Katarzyna", "Lewandowska", "kasia.lew@example.com", "963852741" },
                     { "Marek", "Krawczyk", "marek.krawczyk@example.com", "852741963" },
                     { "Julia", "Mazur", "j.mazur@example.com", "741852963" },
                     { "Paweł", "Szymański", "pawel.szymanski@example.com", "159357486" }
@@ -32,17 +32,8 @@ namespace HotelService.ClientApi.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.Sql("DELETE FROM [Hotel].[Clients] WHERE Email IN (" +
-                "'anna.kowalska@example.com'," +
-                "'jan.nowak@example.com'," +
-                "'ewa.zajac@example.com'," +
-                "'piotr.w@example.com'," +
-                "'magda.wojcik@example.com'," +
-                "'t.kaminski@example.com'," +
-                "'kasia.lew@example.com'," +
-                "'marek.krawczyk@example.com'," +
-                "'j.mazur@example.com'," +
-                "'pawel.szymanski@example.com')");
+            // Usuwa wszystkie rekordy w razie rollbacka
+            migrationBuilder.Sql("DELETE FROM [Hotel].[Clients]");
         }
     }
 }

@@ -3,19 +3,16 @@ using HotelService.ClientApi;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace HotelService.ClientApi.Migrations
+namespace HotelService.Client.Storage.Migrations
 {
     [DbContext(typeof(ClientDbContext))]
-    [Migration("20250614135610_ClientSeed")]
-    partial class ClientSeed
+    partial class ClientDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
