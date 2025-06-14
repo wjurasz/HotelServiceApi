@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelService.ClientApi.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -17,6 +18,7 @@ namespace HotelService.Reservation.Storage.Entities
             [Required]
             public int ClientId { get; set; }
 
+           
             [Required]
             public DateTime StartDate { get; set; }
 

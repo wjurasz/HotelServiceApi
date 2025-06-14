@@ -1,17 +1,18 @@
 using HotelService.ClientApi.Extensions;
 using HotelService.ReservationApi.Extensions;
+using HotelService.ReservationApi.Resolvers;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Dodaj wsparcie dla PATCH (JsonPatchDocument)
 builder.Services
     .AddControllers()
-    .AddNewtonsoftJson(); // Obs³uga JsonPatchDocument
+    .AddNewtonsoftJson(); 
 
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddHttpClient<ClientResolver>();
 
-// ? TYLKO JEDNO AddSwaggerGen, z pe³n¹ konfiguracj¹
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo

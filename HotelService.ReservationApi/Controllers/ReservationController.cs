@@ -1,4 +1,6 @@
 ﻿using HotelService.ClientApi.Entities;
+using HotelService.Reservation.CrossCutting.Dtos;
+using HotelService.ReservationApi.Resolvers;
 using HotelService.ReservationApi.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,10 +11,12 @@ namespace HotelService.ReservationApi.Controllers
     public class ReservationController : ControllerBase
     {
         private readonly ReservationService _reservationService;
+        private readonly ClientResolver _clientResolver;
 
-        public ReservationController(ReservationService reservationService)
+        public ReservationController(ReservationService reservationService, ClientResolver clientResolver)
         {
             _reservationService = reservationService;
+            _clientResolver = clientResolver;
         }
 
         /// <summary>
@@ -28,14 +32,24 @@ namespace HotelService.ReservationApi.Controllers
         /// Pobiera rezerwację na podstawie identyfikatora.
         /// </summary>
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<ActionResult<ReservationDto.Read>> GetById(int id)
         {
-            var reservation = await _reservationService.GetById(id);
-            if (reservation == null)
-                return NotFound();
+            var r = await _reservationService.GetById(id);
+            if (r == null) return NotFound();
 
-            return Ok(reservation);
+            string clientFullName = await _clientResolver.ResolveFullName(r.ClientId);
+
+            return Ok(new ReservationDto.Read
+            {
+                Id = r.Id,
+                StartDate = r.StartDate,
+                EndDate = r.EndDate,
+                Status = r.Status.ToString(),
+                ClientId = r.ClientId,
+                ClientFullName = clientFullName
+            });
         }
+
 
         /// <summary>
         /// Tworzy nową rezerwację.
