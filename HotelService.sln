@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelService.Client.Storage
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelService.Client.CrossCutting", "HotelService.Client.CrossCutting\HotelService.Client.CrossCutting.csproj", "{BCA67152-13D8-459C-B154-F25B4757425C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{EF097806-EDDE-4E31-B058-CBB828755236}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{BCA67152-13D8-459C-B154-F25B4757425C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCA67152-13D8-459C-B154-F25B4757425C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCA67152-13D8-459C-B154-F25B4757425C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF097806-EDDE-4E31-B058-CBB828755236}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF097806-EDDE-4E31-B058-CBB828755236}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF097806-EDDE-4E31-B058-CBB828755236}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF097806-EDDE-4E31-B058-CBB828755236}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
