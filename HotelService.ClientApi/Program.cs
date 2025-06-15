@@ -1,16 +1,15 @@
-using HotelService.ClientApi.Extensions;
+ï»¿using HotelService.ClientApi.Extensions;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Dodaj wsparcie dla PATCH (JsonPatchDocument)
+// Dodaj kontrolery + obsÅ‚ugÄ™ PATCH
 builder.Services
     .AddControllers()
-    .AddNewtonsoftJson(); // Obs³uga JsonPatchDocument
+    .AddNewtonsoftJson(); // â† wspiera JsonPatchDocument
 
+// Swagger + XML-komentarze
 builder.Services.AddEndpointsApiExplorer();
-
-// ? TYLKO JEDNO AddSwaggerGen, z pe³n¹ konfiguracj¹
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
@@ -24,19 +23,18 @@ builder.Services.AddSwaggerGen(c =>
     c.IncludeXmlComments(xmlPath);
 });
 
+// Dodaj serwisy klienta
 builder.Services.AddClientServices();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+// Zawsze pokazuj Swaggera (nie tylko w Development)
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "HotelService API v1");
-        c.RoutePrefix = string.Empty; // Swagger na http://localhost:<port>/
-    });
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "HotelService API v1");
+    c.RoutePrefix = "swagger"; // Swagger dostÄ™pny na "/"
+});
 
 app.UseAuthorization();
 app.MapControllers();

@@ -41,7 +41,12 @@ namespace HotelService.ClientApi.Controllers
                 return NotFound();
             }
 
-            return Ok(client);
+            return Ok(new
+            {
+                client.Id,
+                client.FirstName,
+                client.LastName
+            });
         }
 
         /// <summary>
