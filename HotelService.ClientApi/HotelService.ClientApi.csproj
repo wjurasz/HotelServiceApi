@@ -26,8 +26,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\HotelService.Client.CrossCutting\HotelService.Client.CrossCutting.csproj" />
-	  <ProjectReference Include="..\HotelService.Client.Storage\HotelService.Client.Storage.csproj" />
+		<ProjectReference Include="..\HotelService.Client.CrossCutting\HotelService.Client.CrossCutting.csproj" />
+		<ProjectReference Include="..\HotelService.Client.Storage\HotelService.Client.Storage.csproj" />
 	</ItemGroup>
 
 </Project>

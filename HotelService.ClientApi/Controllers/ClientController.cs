@@ -45,7 +45,9 @@ namespace HotelService.ClientApi.Controllers
             {
                 client.Id,
                 client.FirstName,
-                client.LastName
+                client.LastName,
+                client.Email,
+                client.PhoneNumber
             });
         }
 

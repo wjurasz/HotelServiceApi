@@ -1,4 +1,3 @@
-using HotelService.ClientApi.Extensions;
 using HotelService.ReservationApi.Extensions;
 using HotelService.ReservationApi.Resolvers;
 using System.Reflection;
@@ -27,6 +26,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 builder.Services.AddReservationServices();
+
 
 var app = builder.Build();
 

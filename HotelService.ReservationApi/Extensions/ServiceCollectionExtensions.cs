@@ -1,4 +1,5 @@
 ﻿using HotelService.Reservation.Storage.Context;
+using HotelService.ReservationApi.Resolvers;
 using HotelService.ReservationApi.Services;
 
 namespace HotelService.ReservationApi.Extensions
@@ -9,6 +10,7 @@ namespace HotelService.ReservationApi.Extensions
         {
             services.AddDbContext<ReservationDbContext>();
             services.AddTransient<ReservationService>();
+            services.AddHttpClient<PromotionResolver>();
             return services;
         }
 

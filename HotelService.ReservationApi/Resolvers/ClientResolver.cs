@@ -16,25 +16,24 @@ namespace HotelService.ReservationApi.Resolvers
                 new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public async Task<string> ResolveFullName(int clientId)
+        public async Task<ClientDto?> ResolveClient(int clientId)
         {
             try
             {
-                var response = await _httpClient.GetAsync($"client/{clientId}"); 
+                var response = await _httpClient.GetAsync($"client/{clientId}");
 
                 if (!response.IsSuccessStatusCode)
-                    return "[Nieznany klient]";
+                    return null;
 
                 var json = await response.Content.ReadAsStringAsync();
-                var dto = JsonConvert.DeserializeObject<ClientDto>(json);
-
-                return $"{dto.FirstName} {dto.LastName}";
+                return JsonConvert.DeserializeObject<ClientDto>(json);
             }
             catch
             {
-                return "[Błąd połączenia]";
+                return null;
             }
         }
+
     }
 
     public class ClientDto

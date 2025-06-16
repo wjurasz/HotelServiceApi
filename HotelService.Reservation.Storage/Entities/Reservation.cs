@@ -1,4 +1,5 @@
 ﻿using HotelService.ClientApi.Entities;
+using HotelService.Promotion.Storage.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -18,7 +19,6 @@ namespace HotelService.Reservation.Storage.Entities
             [Required]
             public int ClientId { get; set; }
 
-           
             [Required]
             public DateTime StartDate { get; set; }
 
@@ -27,7 +27,11 @@ namespace HotelService.Reservation.Storage.Entities
 
             [Required]
             public ReservationStatus Status { get; set; } = ReservationStatus.Pending;
-        }
+
+            public int? PromotionId { get; set; }
+
+    
+    }
 
         public enum ReservationStatus
         {

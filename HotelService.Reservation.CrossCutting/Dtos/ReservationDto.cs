@@ -22,6 +22,10 @@ namespace HotelService.Reservation.CrossCutting.Dtos
 
             [Required]
             public DateTime EndDate { get; set; }
+
+            public int? PromotionId { get; set; }
+
+
         }
 
         /// <summary>
@@ -36,7 +40,14 @@ namespace HotelService.Reservation.CrossCutting.Dtos
 
             public int ClientId { get; set; }
             public string ClientFullName { get; set; } = default!;
+            public string ClientEmail { get; set; } = default!;
+            public string ClientPhoneNumber { get; set; } = default!;
+
+            public int? PromotionId { get; set; }
+            public string? PromotionCode { get; set; }
+            public decimal? DiscountPercentage { get; set; }
         }
+
 
         /// <summary>
         /// Dane do edytowania rezerwacji (np. przesunięcie terminu).
@@ -49,6 +60,8 @@ namespace HotelService.Reservation.CrossCutting.Dtos
             [Required]
             public DateTime EndDate { get; set; }
         }
+
+
     }
 }
 

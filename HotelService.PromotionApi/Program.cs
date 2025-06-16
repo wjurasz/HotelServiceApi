@@ -1,15 +1,11 @@
-﻿using HotelService.ClientApi.Extensions;
+﻿using HotelService.PromotionApi.Extensions;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Dodaj kontrolery + obsługę PATCH
-builder.Services
-    .AddControllers()
-    .AddNewtonsoftJson(); // ← wspiera JsonPatchDocument
+builder.Services.AddControllers();
+builder.Services.AddPromotionServices(); 
 
-// Swagger + XML-komentarze
-builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
@@ -23,19 +19,18 @@ builder.Services.AddSwaggerGen(c =>
     c.IncludeXmlComments(xmlPath);
 });
 
-// Dodaj serwisy klienta
-builder.Services.AddClientServices();
-
 var app = builder.Build();
 
-// Zawsze pokazuj Swaggera (nie tylko w Development)
+app.UseHttpsRedirection();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "HotelService API v1");
-    c.RoutePrefix = "swagger"; // Swagger dostępny na "/"
+    c.RoutePrefix = "swagger"; 
 });
-
-app.UseAuthorization();
-app.MapControllers();
 app.Run();
