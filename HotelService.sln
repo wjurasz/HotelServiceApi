@@ -27,7 +27,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelService.Promotion.Cros
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelService.PromotionApi", "HotelService.PromotionApi\HotelService.PromotionApi.csproj", "{3C5BC655-3DD4-4A5A-8767-A59BE3DBBD23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{F3404491-481F-4732-9787-2A6AE7BC81FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{ECCB571D-E55C-401D-82E5-7C828AA42012}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,10 +71,10 @@ Global
 		{3C5BC655-3DD4-4A5A-8767-A59BE3DBBD23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C5BC655-3DD4-4A5A-8767-A59BE3DBBD23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C5BC655-3DD4-4A5A-8767-A59BE3DBBD23}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F3404491-481F-4732-9787-2A6AE7BC81FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F3404491-481F-4732-9787-2A6AE7BC81FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F3404491-481F-4732-9787-2A6AE7BC81FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F3404491-481F-4732-9787-2A6AE7BC81FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECCB571D-E55C-401D-82E5-7C828AA42012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECCB571D-E55C-401D-82E5-7C828AA42012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECCB571D-E55C-401D-82E5-7C828AA42012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECCB571D-E55C-401D-82E5-7C828AA42012}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
