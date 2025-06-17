@@ -11,7 +11,7 @@ namespace HotelService.ReservationApi.Resolvers
         public PromotionResolver(HttpClient httpClient)
         {
             _httpClient = httpClient;
-            _httpClient.BaseAddress = new Uri("http://localhost:5142/"); // <-- upewnij się, że to port PromotionApi
+            _httpClient.BaseAddress = new Uri("http://localhost:5142/");
             _httpClient.DefaultRequestHeaders.Accept.Clear();
             _httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));

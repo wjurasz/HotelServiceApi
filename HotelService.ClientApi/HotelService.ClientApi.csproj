@@ -6,6 +6,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<NoWarn>$(NoWarn);1591</NoWarn>
+		<UserSecretsId>fb85c82c-009e-41a5-ab69-b893cb4423a2</UserSecretsId>
 		<!-- Ukryj warningi o brakujących komentarzach XML -->
 	</PropertyGroup>
 

@@ -3,12 +3,10 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Dodaj kontrolery + obsługę PATCH
 builder.Services
     .AddControllers()
-    .AddNewtonsoftJson(); // ← wspiera JsonPatchDocument
+    .AddNewtonsoftJson(); 
 
-// Swagger + XML-komentarze
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -23,17 +21,15 @@ builder.Services.AddSwaggerGen(c =>
     c.IncludeXmlComments(xmlPath);
 });
 
-// Dodaj serwisy klienta
 builder.Services.AddClientServices();
 
 var app = builder.Build();
 
-// Zawsze pokazuj Swaggera (nie tylko w Development)
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "HotelService API v1");
-    c.RoutePrefix = "swagger"; // Swagger dostępny na "/"
+    c.RoutePrefix = "swagger"; 
 });
 
 app.UseAuthorization();
